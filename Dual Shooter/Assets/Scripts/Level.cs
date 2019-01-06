@@ -17,6 +17,7 @@ public class Level : MonoBehaviour
     void Start()
     {
         musicAudioSource = FindObjectOfType<GameMusicLoader>().GetComponent<AudioSource>();
+
     }
 
     public bool GetIfPaused()
