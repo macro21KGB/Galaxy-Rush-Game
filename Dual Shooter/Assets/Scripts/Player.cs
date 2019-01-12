@@ -16,12 +16,16 @@ public class Player : MonoBehaviour {
     [SerializeField] float projectileSpeed = 5f;
     [SerializeField] int magazineCapacity = 10;
     [SerializeField] float ReloadTime = 1.0f;
+    [SerializeField] GameObject BigMisslePrefab;
+    [SerializeField] bool UsedThermo = false;
 
     [Header("Dual PLayer Options")]
     [SerializeField] float padding = 1.0f;
     [SerializeField] string HorizontalAxis = "Horizontal";
     [SerializeField] string VerticalAxis = "Vertical";
     [SerializeField] string FireThing = "Fire1";
+    [SerializeField] string FireThermo = "FireThermo1";
+
     [Header("VFX - SFX")]
     [SerializeField] AudioClip playerDeadSound;
     [SerializeField] [Range(0,1)] float deathSoundVolume = 0.75f;
@@ -52,8 +56,11 @@ public class Player : MonoBehaviour {
 	void Update () {
         Move();
         Shoot();
-        if (clipAmount != magazineCapacity) { Reload(); }
+        ShootThermoMissile();
 
+        if (clipAmount != magazineCapacity) {
+            Reload();
+        }
   
     }
 
@@ -72,7 +79,17 @@ public class Player : MonoBehaviour {
     }
 
 
-
+    private void ShootThermoMissile()
+    {
+        if (!UsedThermo)
+        {
+            if (Input.GetButtonDown(FireThermo))
+            {
+                Instantiate(BigMisslePrefab, transform.position, transform.rotation);
+                UsedThermo = true;
+            }
+        }
+    }
 
 
     //Ritrona la vita corrente del Player
@@ -116,6 +133,7 @@ public class Player : MonoBehaviour {
     //Quando avvien una collisione con un prioettile nemico o il nemico stesso
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
         if (!damageDealer) { return; }
         ProcessHit(damageDealer);
@@ -143,7 +161,7 @@ public class Player : MonoBehaviour {
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(playerDeadSound, Camera.main.transform.position, deathSoundVolume);
         GameObject PlayerEffect = Instantiate(Playerdead, transform.position, transform.rotation) as GameObject;
-        Destroy(PlayerEffect, 1f);
+        Destroy(PlayerEffect, 2f);
         
         
     }

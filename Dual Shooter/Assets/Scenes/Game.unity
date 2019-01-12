@@ -891,7 +891,7 @@ GameObject:
   - component: {fileID: 746081794}
   m_Layer: 9
   m_Name: Player2
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -917,10 +917,13 @@ MonoBehaviour:
   projectileSpeed: -12
   magazineCapacity: 10
   ReloadTime: 0.85
+  BigMisslePrefab: {fileID: 1698752923665760, guid: 24ca7474910534b45b6f229da5909eeb,
+    type: 3}
   padding: 0.5
   HorizontalAxis: Horizontal2
   VerticalAxis: Vertical2
   FireThing: Fire2
+  FireThermo: FireThermo2
   playerDeadSound: {fileID: 8300000, guid: be61f57ff9c276d4880a43b4dd130329, type: 3}
   deathSoundVolume: 0.93
   playerShootSound: {fileID: 8300000, guid: 49a54a99c4b164542bc797bb80f06639, type: 3}
@@ -2309,7 +2312,7 @@ GameObject:
   - component: {fileID: 1776983106}
   m_Layer: 8
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2335,10 +2338,13 @@ MonoBehaviour:
   projectileSpeed: 12
   magazineCapacity: 10
   ReloadTime: 0.85
+  BigMisslePrefab: {fileID: 1698752923665760, guid: cda1146629b30a449ba8a9bab09acbae,
+    type: 3}
   padding: 0.5
   HorizontalAxis: Horizontal
   VerticalAxis: Vertical
   FireThing: Fire1
+  FireThermo: FireThermo1
   playerDeadSound: {fileID: 8300000, guid: be61f57ff9c276d4880a43b4dd130329, type: 3}
   deathSoundVolume: 0.93
   playerShootSound: {fileID: 8300000, guid: 49a54a99c4b164542bc797bb80f06639, type: 3}
@@ -2546,7 +2552,7 @@ PrefabInstance:
     - target: {fileID: 2078341873565416356, guid: bc142333c63c0994ba7cf7edab345fe3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6306051105955722681, guid: bc142333c63c0994ba7cf7edab345fe3,
         type: 3}
