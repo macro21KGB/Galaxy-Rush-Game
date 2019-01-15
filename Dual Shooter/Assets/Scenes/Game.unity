@@ -2962,8 +2962,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714e3b28a3b415747b1feb84d9a62ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBtwPowerUp: 5
   PowerUp: {fileID: 2105730457}
+  HomingOnline: {fileID: 8300000, guid: 33a98355f08e8324f8744c864e8a026a, type: 3}
 --- !u!4 &2058414477
 Transform:
   m_ObjectHideFlags: 0

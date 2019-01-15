@@ -8,6 +8,7 @@ public class HomingMissile : MonoBehaviour
     public float speed = 5f;
     public float rotateSpeed = 220f;
     public bool rightToLeft = false;
+    public GameObject homingExplode;
 
     public string targetName;
 
@@ -19,7 +20,7 @@ public class HomingMissile : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag(targetName).transform;
         rb = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 7);
     }
 
   
@@ -39,10 +40,20 @@ public class HomingMissile : MonoBehaviour
                 rb.angularVelocity = -rotateAmount * rotateSpeed;
                 rb.velocity = transform.right * speed;
         }
-        else
+        }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if(other.CompareTag("Player") || other.CompareTag("Player2") || other.CompareTag("Proiettile"))
         {
-            Destroy(gameObject);
+            Die();
         }
-        }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+        GameObject PlayerEffect = Instantiate(homingExplode, transform.position, transform.rotation) as GameObject;
+        Destroy(PlayerEffect, 2f);
+    }
 
 }

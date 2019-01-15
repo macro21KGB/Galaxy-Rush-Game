@@ -173,6 +173,8 @@ MonoBehaviour:
   speed: 10
   rotateSpeed: 280
   rightToLeft: 1
+  homingExplode: {fileID: 4792763984431101057, guid: c8e57aa3d88ddb8498b93d7ae7117c95,
+    type: 3}
   targetName: Player
 --- !u!95 &2634642355352915952
 Animator:

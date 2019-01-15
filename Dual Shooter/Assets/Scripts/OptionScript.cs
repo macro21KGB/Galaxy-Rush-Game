@@ -13,7 +13,6 @@ public class OptionScript : MonoBehaviour
 
    public void setVolume(float volume)
     {
-        Debug.Log(volume);
         audioMixer.SetFloat("volume", volume);
     }
 
