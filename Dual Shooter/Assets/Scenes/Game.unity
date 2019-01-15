@@ -919,7 +919,7 @@ MonoBehaviour:
   ReloadTime: 0.85
   BigMisslePrefab: {fileID: 1698752923665760, guid: 24ca7474910534b45b6f229da5909eeb,
     type: 3}
-  UsedThermo: 0
+  UsedThermo: 1
   padding: 0.5
   HorizontalAxis: Horizontal2
   VerticalAxis: Vertical2
@@ -2341,7 +2341,7 @@ MonoBehaviour:
   ReloadTime: 0.85
   BigMisslePrefab: {fileID: 1698752923665760, guid: cda1146629b30a449ba8a9bab09acbae,
     type: 3}
-  UsedThermo: 0
+  UsedThermo: 1
   padding: 0.5
   HorizontalAxis: Horizontal
   VerticalAxis: Vertical
@@ -2555,6 +2555,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833866502491486552, guid: 233d1b0d4868d534b8dd2da305cf5988,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1367342880994264800, guid: 233d1b0d4868d534b8dd2da305cf5988,
         type: 3}
@@ -2957,6 +2962,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714e3b28a3b415747b1feb84d9a62ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeBtwPowerUp: 5
+  PowerUp: {fileID: 2105730457}
 --- !u!4 &2058414477
 Transform:
   m_ObjectHideFlags: 0
@@ -3041,6 +3048,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2105730457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2833866502491486552, guid: 233d1b0d4868d534b8dd2da305cf5988,
+    type: 3}
+  m_PrefabInstance: {fileID: 1826720250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4904559874127898823
 PrefabInstance:
   m_ObjectHideFlags: 0

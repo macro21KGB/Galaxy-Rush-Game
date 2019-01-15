@@ -36,17 +36,8 @@ public class HomingMissile : MonoBehaviour
 
             float rotateAmount = Vector3.Cross(direction, transform.right).z;
 
-
-            if (rightToLeft)
-            {
                 rb.angularVelocity = -rotateAmount * rotateSpeed;
                 rb.velocity = transform.right * speed;
-            }
-            else
-            {
-                rb.angularVelocity = -rotateAmount * rotateSpeed;
-                rb.velocity = transform.right * speed;
-            }
         }
         else
         {
