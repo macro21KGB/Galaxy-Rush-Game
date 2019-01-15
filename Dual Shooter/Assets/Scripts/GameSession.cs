@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
-    public float TimeBtwPowerUp = 15f;
+    
     Level level;
     public GameObject PowerUp;
 
+    private float TimeBtwPowerUp;
+
     void Start()
     {
+        TimeBtwPowerUp = Random.Range(8f, 15f);
         level = FindObjectOfType<Level>();
 
         if(PowerUp != null)
