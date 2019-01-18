@@ -9,6 +9,7 @@ public class GameSession : MonoBehaviour
     public GameObject PowerUp;
     public AudioClip HomingOnline;
 
+    public Animator animator;
     private float TimeBtwPowerUp;
 
     void Start()
@@ -16,6 +17,7 @@ public class GameSession : MonoBehaviour
         TimeBtwPowerUp = Random.Range(8f, 15f);
         level = FindObjectOfType<Level>();
         StartCoroutine(PlaySound());
+        
         if(PowerUp != null)
         {
             PowerUp.SetActive(false);
@@ -34,6 +36,7 @@ public class GameSession : MonoBehaviour
 
         if(TimeBtwPowerUp <= 0 && PowerUp != null) {
             PowerUp.SetActive(true);
+            animator.SetTrigger("isOnline");
         }
 
         //Restart Game----
